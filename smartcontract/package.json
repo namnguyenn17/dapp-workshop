@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network ",
+    "test": "hardhat test",
+    "verify": "hardhat verify --network "
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +17,8 @@
     "hardhat": "^2.11.2",
     "openzeppelin-solidity": "^4.6.0",
     "web3": "^1.8.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
   }
 }
