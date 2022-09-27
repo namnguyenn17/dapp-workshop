@@ -23,4 +23,5 @@ npx hardhat verify --network bsctestnet <contract-address>
 # Keep tracking network
 
 To make the project easy to maintain as well switch between others network. We create file `config.json` to manage those code
+
 We use **fs** library for helping this file. It always update after each deploy
