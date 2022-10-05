@@ -1,5 +1,8 @@
 {
   "dev": {},
-  "bsctest": {},
+  "bsctest": {
+    "Crown": "0xfee6D906294801e70E4a22ECE28DdcCD0A495166",
+    "Vault": "0x49eeF10Bcc0F8D8630C2A2383103BC6Eb0B01655"
+  },
   "main": {}
 }
