@@ -4,6 +4,20 @@ export interface IWalletInfo {
 }
 
 export interface IRate {
-  usdRate: number
+  usdtRate: number
   bnbRate: number
+}
+
+export enum TOKEN {
+  BNB = 'BNB',
+  USDT = 'USDT',
+}
+
+export interface IPackage {
+  key: string
+  name: string
+  amount: number
+  icon: string
+  bg: string
+  token: TOKEN
 }
