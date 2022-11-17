@@ -28,7 +28,7 @@ import type {
   PromiseOrValue,
 } from "../../common";
 
-export interface FLPCrowdSaleInterface extends utils.Interface {
+export interface CrownCrowdSaleInterface extends utils.Interface {
   functions: {
     "BNB_rate()": FunctionFragment;
     "USDT_rate()": FunctionFragment;
@@ -235,12 +235,12 @@ export type SetUSDTTokenEvent = TypedEvent<[string], SetUSDTTokenEventObject>;
 
 export type SetUSDTTokenEventFilter = TypedEventFilter<SetUSDTTokenEvent>;
 
-export interface FLPCrowdSale extends BaseContract {
+export interface CrownCrowdSale extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: FLPCrowdSaleInterface;
+  interface: CrownCrowdSaleInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,

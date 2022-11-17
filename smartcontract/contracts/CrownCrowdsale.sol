@@ -5,7 +5,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 import "openzeppelin-solidity/contracts/access/Ownable.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/utils/SafeERC20.sol";
 
-contract CRNCrowdSale is Ownable {
+contract CrownCrowdSale is Ownable {
     using SafeERC20 for IERC20;
     address payable public _wallet;
     uint256 public BNB_rate;
@@ -65,11 +65,11 @@ contract CRNCrowdSale is Ownable {
 
     function buyTokenByUSDT(uint256 USDTAmount) external {
         uint256 amount = getTokenAmountUSDT(USDTAmount);
+        require(amount > 0, "Amount is zero");
         require(
-            msg.sender.balance >= USDTAmount,
+            usdtToken.balanceOf(msg.sender) >= USDTAmount,
             "Insufficient account balance"
         );
-        require(amount > 0, "Amount is zero");
         require(
             token.balanceOf(address(this)) >= amount,
             "Insufficient account balance"

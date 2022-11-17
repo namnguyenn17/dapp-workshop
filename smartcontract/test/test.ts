@@ -11,7 +11,15 @@ function parseEther(amount: Number) {
   return ethers.utils.parseUnits(amount.toString(), 18)
 }
 
-describe('Vault', function () {
+function getbyte(strinput: string) {
+  var bytes = []
+  for (var i = 0; i < strinput.length; ++i) {
+    bytes.push(strinput.charCodeAt(i))
+  }
+  return bytes
+}
+
+describe('Crown Contract', function () {
   let owner: SignerWithAddress,
     alice: SignerWithAddress,
     bob: SignerWithAddress,
@@ -24,11 +32,12 @@ describe('Vault', function () {
     await ethers.provider.send('hardhat_reset', [])
     ;[owner, alice, bob, carol] = await ethers.getSigners()
 
-    const Vault = await ethers.getContractFactory('Vault', owner)
-    vault = await Vault.deploy()
-    const Token = await ethers.getContractFactory('Crown', owner)
+    const Vault = await ethers.getContractFactory('CrownVault', owner)
+    vault = await Vault.deploy('0xE8cf891E9C08AFb6b2d3Bf2f5d28FEB40eDbfF7e')
+    const Token = await ethers.getContractFactory('CrownToken', owner)
     token = await Token.deploy()
-    await vault.setToken(token.address)
+
+    vault.setToken(token.address)
   })
 
   // Happy path

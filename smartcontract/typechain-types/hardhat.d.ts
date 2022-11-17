@@ -13,21 +13,21 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "CRNCrowdSale",
+      name: "CrownCrowdSale",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CRNCrowdSale__factory>;
+    ): Promise<Contracts.CrownCrowdSale__factory>;
     getContractFactory(
-      name: "Crown",
+      name: "CrownToken",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Crown__factory>;
+    ): Promise<Contracts.CrownToken__factory>;
+    getContractFactory(
+      name: "CrownVault",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CrownVault__factory>;
     getContractFactory(
       name: "USDT",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.USDT__factory>;
-    getContractFactory(
-      name: "Vault",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Vault__factory>;
     getContractFactory(
       name: "AccessControl",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -74,25 +74,25 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.IERC165__factory>;
 
     getContractAt(
-      name: "CRNCrowdSale",
+      name: "CrownCrowdSale",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.CRNCrowdSale>;
+    ): Promise<Contracts.CrownCrowdSale>;
     getContractAt(
-      name: "Crown",
+      name: "CrownToken",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Crown>;
+    ): Promise<Contracts.CrownToken>;
+    getContractAt(
+      name: "CrownVault",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CrownVault>;
     getContractAt(
       name: "USDT",
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.USDT>;
-    getContractAt(
-      name: "Vault",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Vault>;
     getContractAt(
       name: "AccessControl",
       address: string,
