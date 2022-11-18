@@ -76,7 +76,7 @@ export default function InvestCard({
         border="1px solid #fff"
         color="rgba(255,255,255, 0.7)"
       >
-        {numberFormat(pak.amount)} IPT
+        {numberFormat(pak.amount)} CRT
       </Button>
       <HStack my="15px">
         <Text color="gray">Amount of coins to pay: </Text>
