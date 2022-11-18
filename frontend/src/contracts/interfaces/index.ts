@@ -1,4 +1,5 @@
-import BaseInterface from './BaseInterface'
 import Erc20 from './Erc20Interface'
+// import Erc721 from './Erc721Interface'
+import BaseInterface from './BaseInterface'
 
-export { BaseInterface, Erc20 }
+export { Erc20, BaseInterface }
