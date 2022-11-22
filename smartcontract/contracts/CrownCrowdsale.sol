@@ -74,6 +74,7 @@ contract CrownCrowdSale is Ownable {
             token.balanceOf(address(this)) >= amount,
             "Insufficient account balance"
         );
+
         SafeERC20.safeTransferFrom(usdtToken, msg.sender, _wallet, USDTAmount);
         SafeERC20.safeTransfer(token, msg.sender, amount);
         emit BuyTokenByUSDT(msg.sender, amount);
