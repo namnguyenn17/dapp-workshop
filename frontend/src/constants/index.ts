@@ -1,4 +1,4 @@
-import { IPackage, TOKEN } from '../_types_'
+import { IPackage, TOKEN, IMenu } from '@/_types_'
 
 export const packages: IPackage[] = [
   {
@@ -49,4 +49,9 @@ export const packages: IPackage[] = [
     icon: 'usdt.png',
     token: TOKEN.USDT,
   },
+]
+
+export const menus: IMenu[] = [
+  { name: 'Invest', url: '/' },
+  { name: 'Market', url: '/market' },
 ]

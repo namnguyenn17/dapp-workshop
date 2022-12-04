@@ -21,3 +21,8 @@ export interface IPackage {
   bg: string
   token: TOKEN
 }
+
+export interface IMenu {
+  name: string
+  url: string
+}

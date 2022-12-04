@@ -40,23 +40,6 @@ export default function InvestView() {
     getRate()
   }, [getRate])
 
-  const onConnectMetamask = async () => {
-    if (window.ethereum) {
-      const provider = new ethers.providers.Web3Provider(
-        window.ethereum,
-        undefined
-      )
-      await provider.send('eth_requestAccounts', []) // request account access if needed
-      const signer = provider.getSigner()
-      const address = await signer.getAddress()
-      const bigBalance = await signer.getBalance()
-      const bnbBalance = ethers.utils.formatEther(bigBalance)
-
-      setWallet({ address, bnb: Number(bnbBalance) })
-      setWeb3Provider(provider)
-    }
-  }
-
   const handleBuyIco = async (pk: IPackage) => {
     if (!web3Provider) return
     setPak(pk)
@@ -90,22 +73,7 @@ export default function InvestView() {
   }
 
   return (
-    <Flex
-      w={{ base: 'full', lg: '85%' }}
-      flexDirection="column"
-      margin="50px auto"
-    >
-      <Flex>
-        <Heading size="lg" fontWeight="bold">
-          Blockchain Trainee
-        </Heading>
-        <Spacer />
-        {!wallet && <ConnectWallet onClick={onConnectMetamask} />}
-        {wallet && (
-          <WalletInfo address={wallet?.address} amount={wallet?.bnb || 0} />
-        )}
-      </Flex>
-
+    <>
       <SimpleGrid columns={{ base: 1, lg: 3 }} mt="50px" spacingY="20px">
         {packages.map((pk, index) => (
           <InvestCard
@@ -125,6 +93,6 @@ export default function InvestView() {
         hash={txHash}
         title="BUY ICO SUCCESS!!!"
       />
-    </Flex>
+    </>
   )
 }
