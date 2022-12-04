@@ -22,15 +22,28 @@ async function main() {
   // console.log('USDT deployed to: ', usdt.address)
   // Config.setConfig(network + '.USDT', usdt.address)
 
-  const CrownCrowdSale = await ethers.getContractFactory('CrownCrowdSale')
-  const crownCrowdSale = await CrownCrowdSale.deploy(
-    1000,
-    100,
-    '0x8C025238aAf9241060422ed1e4DfB2bD45fACD5F',
+  // const CrownCrowdSale = await ethers.getContractFactory('CrownCrowdSale')
+  // const crownCrowdSale = await CrownCrowdSale.deploy(
+  //   1000,
+  //   100,
+  //   '0x8C025238aAf9241060422ed1e4DfB2bD45fACD5F',
+  //   '0xd1A1105d14bfa100D0F49FCf9d45e49EAa484B32'
+  // )
+  // console.log('CrownCrowdSale address: ', crownCrowdSale.address)
+  // Config.setConfig(network + '.CrownCrowdSale', crownCrowdSale.address)
+
+  // const Hero = await ethers.getContractFactory('Hero')
+  // const hero = await Hero.deploy()
+  // console.log('Warrior Hero address: ', hero.address)
+  // Config.setConfig(network + '.HeroNFT', hero.address)
+
+  const MKP = await ethers.getContractFactory('HeroMarketplace')
+  const heromarketplace = await MKP.deploy(
+    '0x445E75e9643Ff0D7DbB2A4e14837f5430Bfa41aA',
     '0xd1A1105d14bfa100D0F49FCf9d45e49EAa484B32'
   )
-  console.log('CrownCrowdSale address: ', crownCrowdSale.address)
-  Config.setConfig(network + '.CrownCrowdSale', crownCrowdSale.address)
+  console.log('Warrior Hero address: ', heromarketplace.address)
+  Config.setConfig(network + '.HeroMarketplace', heromarketplace.address)
 
   await Config.updateConfig()
 }

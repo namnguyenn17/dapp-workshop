@@ -19,6 +19,7 @@
     "web3": "^1.8.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0",
     "fs": "^0.0.1-security"
   }
 }

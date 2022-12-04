@@ -2,6 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as crownCrowdsaleSol from "./CrownCrowdsale.sol";
+export * as heroSol from "./Hero.sol";
 export { CrownToken__factory } from "./CrownToken__factory";
 export { CrownVault__factory } from "./CrownVault__factory";
+export { HeroMarketplace__factory } from "./HeroMarketplace__factory";
 export { USDT__factory } from "./USDT__factory";
