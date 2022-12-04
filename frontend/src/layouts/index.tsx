@@ -47,7 +47,7 @@ export default function MainLayout({ children }: IProps) {
     >
       <Flex w="full" alignItems="center" justifyContent="center">
         <Heading size="lg" fontWeight="bold">
-          Blockchain Trainee
+          Dapp Marketplace
         </Heading>
         <Spacer />
         {menus.map((menu) => (
