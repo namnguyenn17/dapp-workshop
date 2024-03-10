@@ -5,7 +5,9 @@ import InvestView from '../src/views/invests'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  return <InvestView />
+  return (
+    <InvestView />
+  )
 }
 
 export default Home

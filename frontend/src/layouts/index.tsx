@@ -41,13 +41,13 @@ export default function MainLayout({ children }: IProps) {
 
   return (
     <Flex
-      w={{ base: 'full', lg: '85%' }}
+      w={{ base: 'full', lg: '70%' }}
       flexDirection="column"
       margin="50px auto"
     >
       <Flex w="full" alignItems="center" justifyContent="center">
         <Heading size="lg" fontWeight="bold">
-          Dapp Marketplace
+          Dapp Workshop
         </Heading>
         <Spacer />
         {menus.map((menu) => (

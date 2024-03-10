@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "ico",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,14 +13,14 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@ethersproject/abstract-provider": "^5.7.0",
-    "@reduxjs/toolkit": "^1.9.1",
+    "@reduxjs/toolkit": "^1.8.5",
     "ethers": "^5.7.0",
     "framer-motion": "^6",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "18.2.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@types/node": "18.7.15",

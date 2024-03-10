@@ -8,20 +8,20 @@ import {
   Button,
   Flex,
   ModalCloseButton,
-} from '@chakra-ui/react'
-import { showTransactionHash } from '../utils'
+} from "@chakra-ui/react";
+import { showTransactionHash } from "../utils";
 
-interface IProps extends Omit<ModalProps, 'children'> {
-  hash?: string
-  title?: string
+interface IProps extends Omit<ModalProps, "children"> {
+  hash?: string;
+  title?: string;
 }
 
 export default function SuccessModal({ hash, title, ...props }: IProps) {
   const onNavigation = () => {
     if (window) {
-      window.open(`https://testnet.bscscan.com/tx/${hash}`, '_blank')
+      window.open(`https://testnet.bscscan.com/tx/${hash}`, '_blank');
     }
-  }
+  };
 
   return (
     <Modal closeOnOverlayClick={false} {...props}>
@@ -47,11 +47,11 @@ export default function SuccessModal({ hash, title, ...props }: IProps) {
             </Text>
 
             <Button w="full" variant="primary" mt="20px" onClick={onNavigation}>
-              {showTransactionHash(hash || '')}
+              {showTransactionHash(hash || "")}
             </Button>
           </Flex>
         </ModalBody>
       </ModalContent>
     </Modal>
-  )
+  );
 }

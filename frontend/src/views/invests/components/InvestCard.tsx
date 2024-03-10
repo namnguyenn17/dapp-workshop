@@ -1,14 +1,14 @@
-import { Box, Image, Text, Button, HStack, Spinner } from '@chakra-ui/react'
-import React from 'react'
-import { numberFormat } from '../../../utils'
-import { IPackage, IWalletInfo } from '../../../_types_'
+import { Box, Image, Text, Button, HStack, Spinner } from "@chakra-ui/react";
+import React from "react";
+import { numberFormat } from "../../../utils";
+import { IPackage, IWalletInfo } from "../../../_types_";
 
 interface IProps {
-  pak: IPackage
-  isBuying: boolean
-  rate: number
-  walletInfo?: IWalletInfo
-  onBuy?: () => void
+  pak: IPackage;
+  isBuying: boolean;
+  rate: number;
+  walletInfo?: IWalletInfo;
+  onBuy?: () => void;
 }
 
 export default function InvestCard({
@@ -38,7 +38,8 @@ export default function InvestCard({
         bgSize="cover"
         bgPos="center"
       />
-      <Box
+
+    <Box
         w="120px"
         h="120px"
         margin="0px auto"
@@ -66,7 +67,7 @@ export default function InvestCard({
       </Box>
 
       <Text my="20px" fontSize="24px" fontWeight="bold">
-        {pak.name}
+        {pak.name }
       </Text>
       <Button
         disabled
@@ -76,7 +77,7 @@ export default function InvestCard({
         border="1px solid #fff"
         color="rgba(255,255,255, 0.7)"
       >
-        {numberFormat(pak.amount)} CRT
+        {numberFormat(pak.amount)} IPT
       </Button>
       <HStack my="15px">
         <Text color="gray">Amount of coins to pay: </Text>
@@ -85,14 +86,10 @@ export default function InvestCard({
         </Text>
       </HStack>
 
-      <Button
-        w="full"
-        variant="primary"
-        disabled={!walletInfo?.address || isBuying}
-        onClick={onBuy}
-      >
-        {isBuying ? <Spinner /> : 'Buy Now'}
+      <Button w="full" variant="primary" disabled={!walletInfo?.address || isBuying} onClick={onBuy}>
+        {isBuying ? <Spinner /> : 'Buy Now'}        
       </Button>
+
     </Box>
-  )
+  );
 }

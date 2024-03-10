@@ -1,6 +1,6 @@
-export type AddressType = {
-  97: string
-  56: string
+export type AddressType  = {
+  97: string;
+  56: string;
 }
 
 export enum CHAIN_ID {
@@ -9,22 +9,22 @@ export enum CHAIN_ID {
 }
 
 export default function getChainIdFromEnv(): number {
-  const env = process.env.NEXT_PUBLIC_CHAIN_ID
-  if (!env) {
-    return 97
-  }
-  return parseInt(env)
+  const env = process.env.NEXT_PUBLIC_CHAIN_ID;
+  if (!env) { return 97;}
+  return parseInt(env);
 }
+
 
 export const getRPC = () => {
   if (getChainIdFromEnv() === CHAIN_ID.MAINNET)
-    return process.env.NEXT_PUBLIC_RPC_MAINNET
-  return process.env.NEXT_PUBLIC_RPC_TESTNET
+    return process.env.NEXT_PUBLIC_RPC_MAINNET;
+  return process.env.NEXT_PUBLIC_RPC_TESTNET;
 }
-
 export const SMART_ADDRESS = {
-  CROWD_SALE: { 97: '0xae33AB100B084767ea5c5b1f14BBE81CD37bE162', 56: '' },
-  USDT: { 97: '0x2714b22A6C78C15929b281189DA2Ef008c0b3617', 56: '' },
-  NFT: { 97: '0x445E75e9643Ff0D7DbB2A4e14837f5430Bfa41aA', 56: '' },
-  MARKET: { 97: '0xb146aD5b9217bf7b116bb8aCaa9f7601E5770F06', 56: '' },
+  CROWD_SALE: {97: '0xA2FE414E565511f754Fa62DAdD4aA494e55683bB', 56: ''},
+  USDT: {97: '0xDc2229777a34798c9eE7E05dFCee2B4d2AfDcbfc', 56: ''},
+  NFT: {97: '0xeFe14Edd8adb233784A3124F39B31367d7066E61', 56: ''},
+  MARKET: {97: '0x52620b7782F2217De0fA3f0193224cfb1DF7Ba8F', 56: ''},
+  AUCTION: {97: '0x9eC705fEF884bdB6382507B3CA544e21FBB66177', 56: ''},
+  IPT: {97: '0xBfF3cC27180E6425377c55D7bDC069D18Ae7d99d', 56: ''}
 }

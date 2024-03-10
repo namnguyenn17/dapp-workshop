@@ -1,38 +1,40 @@
-import { promises as fs } from 'fs'
+import {promises as fs} from 'fs'
 
-let config: any
+var config:any;
 
 export async function initConfig() {
-  console.log('init')
-  config = JSON.parse((await fs.readFile('./config.json')).toString())
-  return config
+    console.log('init');
+    config = JSON.parse((await fs.readFile('./config.json')).toString());
+    return config;
 }
 
 export function getConfig() {
-  return config
+    return config;
 }
 
 export function setConfig(path: string, val: string) {
-  console.log(config)
-  const splitPath = path.split('.').reverse()
+    console.log(config);
+    const splitPath = path.split('.').reverse()
 
-  let ref = config
-  while (splitPath.length > 1) {
-    let key = splitPath.pop()
-    if (key) {
-      if (!ref[key]) ref[key] = {}
-      ref = ref[key]
-    } else {
-      return
+    var ref = config;
+    while (splitPath.length > 1) {
+        let key = splitPath.pop();
+        if (key) {
+            if (!ref[key])
+                ref[key] = {};
+            ref = ref[key];
+        } else {
+            return;
+        }
     }
-  }
 
-  let key = splitPath.pop()
-  if (key) ref[key] = val
+    let key = splitPath.pop();
+    if (key)
+        ref[key] = val
 }
 
 export async function updateConfig() {
-  console.log('write: ', JSON.stringify(config))
+    console.log("write: ", JSON.stringify(config));
 
-  return fs.writeFile('./config.json', JSON.stringify(config, null, 2))
+    return fs.writeFile('./config.json', JSON.stringify(config, null, 2));
 }
